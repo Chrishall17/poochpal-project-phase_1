@@ -18,10 +18,10 @@ const validator = (petsFirstName, petsLastName, email, password) => {
 	}
 
 	if (
-		!(password.length >= 8 && password.match(/^(?=.*[a-zA-Z])(?=.*\d).{8,}$/))
+		!(password.length >= 7 && password.match(/^(?=.*[a-zA-Z])(?=.*\d).{8,}$/) || password.length <= 0 && password.match(/^(?=.*[a-zA-Z])(?=.*\d).{8,}$/) )
 	) {
 		errorMessages.push(
-			"Password is invalid: Must contain at least 8 characters, a letter and a number."
+			"Pasword is invalid: Must contain between 8 & 32 characters, a lowercase and uppercase letter, and a number."
 		);
 	}
 
